@@ -134,7 +134,7 @@ const inventory = "Inventarisasi tegakan contoh";
 
 export const seed: DemoData = {
   version: 2,
-  mill: { name: "Pabrik Serat Teluk Jelutong", region: "Muaro Jambi, Jambi", reference: "SVLK-DEMO-001" },
+  mill: { name: "Pabrik Serat Teluk Jelutong", region: "Muaro Jambi, Jambi", reference: "SVLK-001" },
   cooperatives: [
     { id: "KOP-01", name: "Koperasi Rimba Muara", region: "Kumpeh Ulu, Muaro Jambi" },
     { id: "KOP-02", name: "Koperasi Tunas Batanghari", region: "Kumpeh, Muaro Jambi" },
@@ -146,27 +146,27 @@ export const seed: DemoData = {
     { id: "PS-004", name: "Mitra Akasia Sejahtera", type: "HTI mitra", location: "Kumpeh Ulu, Muaro Jambi", cooperativeId: "KOP-01" },
   ],
   plots: [
-    { id: "LH-001", supplierId: "PS-001", owner: "Bayu Pranata", village: "Pematang Jering", documentType: "SHM", documentRef: "SHM-DEMO-001", areaHa: 34.6, annualCapacity: 110, capacityBasis: `${inventory}, riap 3,2 ton/ha`, capacityDate: "2026-03-12", geometry: rectangle(103.789, -1.698, 103.795, -1.693), reviewed: true },
-    { id: "LH-002", supplierId: "PS-001", owner: "Rina Maharani", village: "Pematang Jering", documentType: "SKT", documentRef: "SKT-DEMO-002", areaHa: 29.7, annualCapacity: 85, capacityBasis: `${inventory}, riap 2,9 ton/ha`, capacityDate: "2026-03-12", geometry: rectangle(103.802, -1.704, 103.807, -1.699), reviewed: true },
+    { id: "LH-001", supplierId: "PS-001", owner: "Bayu Pranata", village: "Pematang Jering", documentType: "SHM", documentRef: "SHM-001", areaHa: 34.6, annualCapacity: 110, capacityBasis: `${inventory}, riap 3,2 ton/ha`, capacityDate: "2026-03-12", geometry: rectangle(103.789, -1.698, 103.795, -1.693), reviewed: true },
+    { id: "LH-002", supplierId: "PS-001", owner: "Rina Maharani", village: "Pematang Jering", documentType: "SKT", documentRef: "SKT-002", areaHa: 29.7, annualCapacity: 85, capacityBasis: `${inventory}, riap 2,9 ton/ha`, capacityDate: "2026-03-12", geometry: rectangle(103.802, -1.704, 103.807, -1.699), reviewed: true },
     { id: "LH-003", supplierId: "PS-002", owner: "Dodi Saputra", village: "Rantau Jelutong", documentType: "SKT", documentRef: "", areaHa: 24.7, annualCapacity: 75, capacityBasis: "Perkiraan pemasok, belum diperiksa", capacityDate: "2026-05-20", geometry: rectangle(103.86, -1.713, 103.865, -1.709), reviewed: false },
-    { id: "LH-004", supplierId: "PS-002", owner: "Sari Wulandari", village: "Rantau Jelutong", documentType: "SHM", documentRef: "SHM-DEMO-004", areaHa: 29.7, annualCapacity: 80, capacityBasis: `${inventory}, riap 2,7 ton/ha`, capacityDate: "2026-04-02", geometry: rectangle(103.867, -1.706, 103.873, -1.702), reviewed: true },
-    { id: "LH-005", supplierId: "PS-003", owner: "Ilham Fadli", village: "Teluk Meranti", documentType: "SKT", documentRef: "SKT-DEMO-005", areaHa: 29.7, annualCapacity: 90, capacityBasis: `${inventory}, riap 3,0 ton/ha`, capacityDate: "2026-02-18", geometry: rectangle(103.916, -1.732, 103.922, -1.728), reviewed: true },
-    { id: "LH-006", supplierId: "PS-003", owner: "Yuni Kartika", village: "Teluk Meranti", documentType: "SHM", documentRef: "SHM-DEMO-006", areaHa: 24.7, annualCapacity: 70, capacityBasis: `${inventory}, riap 2,8 ton/ha`, capacityDate: "2026-02-18", geometry: rectangle(103.903, -1.71, 103.908, -1.706), reviewed: true },
-    { id: "LH-007", supplierId: "PS-004", owner: "Farid Hidayat", village: "Sungai Akasia", documentType: "Perhutanan sosial", documentRef: "PS-DEMO-007", areaHa: 41.5, annualCapacity: 130, capacityBasis: `${inventory}, riap 3,1 ton/ha`, capacityDate: "2026-01-30", geometry: rectangle(103.817, -1.684, 103.823, -1.6784), reviewed: true },
+    { id: "LH-004", supplierId: "PS-002", owner: "Sari Wulandari", village: "Rantau Jelutong", documentType: "SHM", documentRef: "SHM-004", areaHa: 29.7, annualCapacity: 80, capacityBasis: `${inventory}, riap 2,7 ton/ha`, capacityDate: "2026-04-02", geometry: rectangle(103.867, -1.706, 103.873, -1.702), reviewed: true },
+    { id: "LH-005", supplierId: "PS-003", owner: "Ilham Fadli", village: "Teluk Meranti", documentType: "SKT", documentRef: "SKT-005", areaHa: 29.7, annualCapacity: 90, capacityBasis: `${inventory}, riap 3,0 ton/ha`, capacityDate: "2026-02-18", geometry: rectangle(103.916, -1.732, 103.922, -1.728), reviewed: true },
+    { id: "LH-006", supplierId: "PS-003", owner: "Yuni Kartika", village: "Teluk Meranti", documentType: "SHM", documentRef: "SHM-006", areaHa: 24.7, annualCapacity: 70, capacityBasis: `${inventory}, riap 2,8 ton/ha`, capacityDate: "2026-02-18", geometry: rectangle(103.903, -1.71, 103.908, -1.706), reviewed: true },
+    { id: "LH-007", supplierId: "PS-004", owner: "Farid Hidayat", village: "Sungai Akasia", documentType: "Perhutanan sosial", documentRef: "PS-007", areaHa: 41.5, annualCapacity: 130, capacityBasis: `${inventory}, riap 3,1 ton/ha`, capacityDate: "2026-01-30", geometry: rectangle(103.817, -1.684, 103.823, -1.6784), reviewed: true },
     { id: "LH-008", supplierId: "PS-004", owner: "Hendra Gunawan", village: "Sungai Akasia", documentType: "Surat keterangan desa", documentRef: "", areaHa: 18.2, annualCapacity: 50, capacityBasis: "Perkiraan pemasok, belum diperiksa", capacityDate: "2026-09-08", geometry: rectangle(103.826, -1.69, 103.83, -1.686), reviewed: false },
   ],
   lots: [
-    { id: "LOT-2611-001", supplierId: "PS-001", receivingRef: "GR-DEMO-001", transportRef: "NA-DEMO-001", species: "Acacia mangium", date: "2026-11-04", exportGroup: "SERAT-DEMO-A", weight: 80, allocations: [{ plotId: "LH-001", tons: 62 }, { plotId: "LH-002", tons: 18 }] },
-    { id: "LOT-2611-002", supplierId: "PS-002", receivingRef: "GR-DEMO-002", transportRef: "NA-DEMO-002", species: "Acacia mangium", date: "2026-11-07", exportGroup: "", weight: 60, allocations: [{ plotId: "LH-003", tons: 48 }, { plotId: "LH-004", tons: 12 }] },
-    { id: "LOT-2611-003", supplierId: "PS-003", receivingRef: "GR-DEMO-003", transportRef: "NA-DEMO-003", species: "Acacia crassicarpa", date: "2026-11-11", exportGroup: "SERAT-DEMO-B", weight: 68, allocations: [{ plotId: "LH-005", tons: 30 }, { plotId: "LH-006", tons: 38 }] },
-    { id: "LOT-2611-004", supplierId: "PS-003", receivingRef: "GR-DEMO-004", transportRef: "NA-DEMO-004", species: "Acacia crassicarpa", date: "2026-11-14", exportGroup: "SERAT-DEMO-B", weight: 45, allocations: [{ plotId: "LH-006", tons: 45 }] },
+    { id: "LOT-2611-001", supplierId: "PS-001", receivingRef: "GR-001", transportRef: "NA-001", species: "Acacia mangium", date: "2026-11-04", exportGroup: "SERAT-A", weight: 80, allocations: [{ plotId: "LH-001", tons: 62 }, { plotId: "LH-002", tons: 18 }] },
+    { id: "LOT-2611-002", supplierId: "PS-002", receivingRef: "GR-002", transportRef: "NA-002", species: "Acacia mangium", date: "2026-11-07", exportGroup: "", weight: 60, allocations: [{ plotId: "LH-003", tons: 48 }, { plotId: "LH-004", tons: 12 }] },
+    { id: "LOT-2611-003", supplierId: "PS-003", receivingRef: "GR-003", transportRef: "NA-003", species: "Acacia crassicarpa", date: "2026-11-11", exportGroup: "SERAT-B", weight: 68, allocations: [{ plotId: "LH-005", tons: 30 }, { plotId: "LH-006", tons: 38 }] },
+    { id: "LOT-2611-004", supplierId: "PS-003", receivingRef: "GR-004", transportRef: "NA-004", species: "Acacia crassicarpa", date: "2026-11-14", exportGroup: "SERAT-B", weight: 45, allocations: [{ plotId: "LH-006", tons: 45 }] },
   ],
   tasks: [
     {
       id: "TGS-001", supplierId: "PS-001", cooperativeId: "KOP-01", plotId: "LH-001", taskType: "dokumen",
       scope: "Cocokkan nama pemilik dan nomor SHM dengan dokumen asli.", dueDate: "2026-11-05", createdAt: "2026-10-28T02:00:00.000Z",
       feeIdr: 350_000, status: "verified_completed", reviewNote: "Dokumen dan batas lahan sesuai.", obstacles: [],
-      result: { owner: "Bayu Pranata", documentType: "SHM", documentRef: "SHM-DEMO-001", geometry: rectangle(103.789, -1.698, 103.795, -1.693), note: "SHM asli diperiksa bersama pemilik. Batas sesuai patok.", evidence: ["foto-shm-lh001.jpg"] },
+      result: { owner: "Bayu Pranata", documentType: "SHM", documentRef: "SHM-001", geometry: rectangle(103.789, -1.698, 103.795, -1.693), note: "SHM asli diperiksa bersama pemilik. Batas sesuai patok.", evidence: ["foto-shm-lh001.jpg"] },
       history: [
         { at: "2026-10-28T02:00:00.000Z", actor: "pabrik", action: "Tugas dibuat" },
         { at: "2026-10-30T04:10:00.000Z", actor: "koperasi", action: "Hasil dikirim untuk ditinjau" },
@@ -177,7 +177,7 @@ export const seed: DemoData = {
       id: "TGS-002", supplierId: "PS-004", cooperativeId: "KOP-01", plotId: "LH-008", taskType: "dokumen",
       scope: "Minta salinan surat keterangan desa dan pastikan nama pemilik sama.", dueDate: "2026-11-28", createdAt: "2026-11-10T03:00:00.000Z",
       feeIdr: 350_000, status: "submitted_review", obstacles: [],
-      result: { owner: "Hendra Gunawan", documentType: "Surat keterangan desa", documentRef: "SKD-DEMO-008", geometry: rectangle(103.826, -1.69, 103.83, -1.686), note: "Surat keterangan desa ditandatangani kepala desa Sungai Akasia. Batas lahan ditelusuri bersama pemilik.", evidence: ["skd-sungai-akasia-008.pdf", "foto-batas-lh008.jpg"] },
+      result: { owner: "Hendra Gunawan", documentType: "Surat keterangan desa", documentRef: "SKD-008", geometry: rectangle(103.826, -1.69, 103.83, -1.686), note: "Surat keterangan desa ditandatangani kepala desa Sungai Akasia. Batas lahan ditelusuri bersama pemilik.", evidence: ["skd-sungai-akasia-008.pdf", "foto-batas-lh008.jpg"] },
       history: [
         { at: "2026-11-10T03:00:00.000Z", actor: "pabrik", action: "Tugas dibuat" },
         { at: "2026-11-12T01:45:00.000Z", actor: "koperasi", action: "Mulai dikerjakan" },

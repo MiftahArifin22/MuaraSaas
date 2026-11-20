@@ -12,7 +12,7 @@ export const importColumns = [
   { key: "pemilik", label: "Nama pemilik", example: "Agus Salim" },
   { key: "desa", label: "Desa/kecamatan", example: "Pematang Jering" },
   { key: "jenis_dokumen", label: "Jenis dokumen lahan", example: "SKT" },
-  { key: "nomor_dokumen", label: "Nomor dokumen (boleh kosong)", example: "SKT-DEMO-101" },
+  { key: "nomor_dokumen", label: "Nomor dokumen (boleh kosong)", example: "SKT-101" },
   { key: "luas_ha", label: "Luas (ha)", example: "12,5" },
   { key: "kapasitas_ton_tahun", label: "Kapasitas (ton/tahun)", example: "40" },
   { key: "dasar_kapasitas", label: "Dasar kapasitas", example: "Inventarisasi tegakan 2026" },
@@ -20,7 +20,7 @@ export const importColumns = [
 ] as const;
 
 const sampleRows = [
-  { kode_pemasok: "PS-001", nama_pemasok: "", jenis_pemasok: "", kode_lahan: "LH-101", pemilik: "Agus Salim", desa: "Pematang Jering", jenis_dokumen: "SKT", nomor_dokumen: "SKT-DEMO-101", luas_ha: "12,5", kapasitas_ton_tahun: "40", dasar_kapasitas: "Inventarisasi tegakan 2026", geometri: '{"type":"Polygon","coordinates":[[[103.78,-1.69],[103.784,-1.69],[103.784,-1.687],[103.78,-1.687],[103.78,-1.69]]]}' },
+  { kode_pemasok: "PS-001", nama_pemasok: "", jenis_pemasok: "", kode_lahan: "LH-101", pemilik: "Agus Salim", desa: "Pematang Jering", jenis_dokumen: "SKT", nomor_dokumen: "SKT-101", luas_ha: "12,5", kapasitas_ton_tahun: "40", dasar_kapasitas: "Inventarisasi tegakan 2026", geometri: '{"type":"Polygon","coordinates":[[[103.78,-1.69],[103.784,-1.69],[103.784,-1.687],[103.78,-1.687],[103.78,-1.69]]]}' },
   { kode_pemasok: "PS-005", nama_pemasok: "CV Rimba Baru", jenis_pemasok: "Pengepul", kode_lahan: "LH-102", pemilik: "Lestari Ayu", desa: "Sungai Gelam", jenis_dokumen: "SHM", nomor_dokumen: "", luas_ha: "8", kapasitas_ton_tahun: "25", dasar_kapasitas: "Perkiraan pemasok", geometri: '{"type":"Polygon","coordinates":[[[103.84,-1.665],[103.844,-1.665],[103.844,-1.662],[103.84,-1.662],[103.84,-1.665]]]}' },
 ];
 

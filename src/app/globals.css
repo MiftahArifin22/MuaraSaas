@@ -142,8 +142,8 @@ svg { flex-shrink: 0; }
 .landing-nav nav { display: flex; align-items: center; gap: 1.5rem; }
 .landing-nav-link { font-size: .88rem; font-weight: 700; color: var(--forest); }
 .landing-nav-link:hover { text-decoration: underline; text-underline-offset: .2em; }
-.hero-wrap { padding-block: clamp(1.25rem, 3vw, 2.25rem); }
-.landing-hero { position: relative; isolation: isolate; overflow: hidden; display: flex; flex-direction: column; justify-content: center; min-height: clamp(30rem, 62vh, 38rem); padding: clamp(2rem, 5vw, 4.5rem) clamp(1.5rem, 5vw, 4.5rem) clamp(4.5rem, 7vw, 6rem); border-radius: 1.25rem; background: var(--forest); }
+.landing-hero { position: relative; isolation: isolate; overflow: hidden; background: var(--forest); }
+.hero-inner { position: relative; display: flex; flex-direction: column; justify-content: center; min-height: clamp(32rem, 72vh, 42rem); padding-block: clamp(3rem, 6vw, 5rem) clamp(5.5rem, 8vw, 7rem); }
 .hero-bg { object-fit: cover; object-position: 61% 50%; z-index: -2; }
 /* Gradasi gelap di sisi teks agar tulisan tetap terbaca di atas foto. */
 .landing-hero::before { content: ""; position: absolute; z-index: -1; inset: 0; background: linear-gradient(90deg, #0c2216f0 0%, #0c2216d1 38%, #0c22164d 72%, #0c221626 100%), linear-gradient(0deg, #0c2216cc, transparent 40%); }
@@ -155,7 +155,7 @@ svg { flex-shrink: 0; }
 .hero-actions .button-secondary { background: #fff; color: var(--canopy); border-color: #fff; }
 .hero-foot { display: flex; flex-wrap: wrap; gap: .3rem 1rem; font-size: .8rem; color: #dbe7d3; }
 .hero-foot span:first-child { font-weight: 800; color: #d6f08f; }
-.hero-caption { display: flex; position: absolute; align-items: center; gap: .7rem; left: clamp(1.5rem, 5vw, 4.5rem); bottom: 1.6rem; right: 1.75rem; color: #fff; }
+.hero-caption { display: flex; position: absolute; align-items: center; gap: .7rem; left: 0; bottom: clamp(1.5rem, 3vw, 2.25rem); right: 0; color: #fff; }
 .hero-caption .icon-box { background: #e2f2c6; color: var(--forest); }
 .hero-caption strong, .hero-caption small { display: block; }
 .hero-caption small { font-size: .82rem; color: #e1ebd9; }
@@ -584,7 +584,7 @@ button.partner-card:hover { border-color: #9fb59f; }
 @media (max-width: 760px) {
   .landing-width { width: calc(100% - 2rem); }
   .landing-nav-link { display: none; }
-  .landing-hero { min-height: 28rem; padding: 1.75rem 1.25rem 4.5rem; }
+  .hero-inner { min-height: 28rem; padding-block: 2rem 5rem; }
   .landing-hero::before { background: linear-gradient(0deg, #0c2216f2 0%, #0c2216cc 55%, #0c221680 100%); }
   .hero-copy h1 { font-size: clamp(2.3rem, 10vw, 3.4rem); }
   .summary-grid { grid-template-columns: 1fr; }

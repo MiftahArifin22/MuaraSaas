@@ -67,7 +67,7 @@ function FieldForm({ task, plot, onSaved }: { task: Task; plot: Plot; onSaved: (
         <label>Nama pemilik<input name="owner" maxLength={100} defaultValue={result.owner} required /></label>
         <label>Jenis dokumen<input name="documentType" maxLength={80} defaultValue={result.documentType} required /></label>
       </div>
-      <label>Nomor dokumen lahan<input className="mono" name="documentRef" maxLength={100} placeholder="Contoh: SKT-DEMO-003" defaultValue={result.documentRef} required /></label>
+      <label>Nomor dokumen lahan<input className="mono" name="documentRef" maxLength={100} placeholder="Contoh: SKT-003" defaultValue={result.documentRef} required /></label>
       <details className="geometry-details" open={mapping}>
         <summary>{mapping ? "Batas lahan hasil pemetaan (GeoJSON)" : "Ubah batas lahan (opsional)"}</summary>
         <label><span className="sr-only">Poligon lahan (GeoJSON)</span><textarea className="mono" name="geometry" rows={6} maxLength={40000} defaultValue={editableGeometry(result.geometry)} required /><small>Satu cincin luar dengan urutan bujur, lintang. Titik terakhir sama dengan titik awal.</small></label>
@@ -76,7 +76,7 @@ function FieldForm({ task, plot, onSaved }: { task: Task; plot: Plot; onSaved: (
       <div className="evidence-field">
         <label className="file-drop compact">
           <Paperclip size={18} aria-hidden="true" />
-          <span><strong>Lampirkan bukti</strong><small>Foto dokumen atau lahan (demo: hanya nama file)</small></span>
+          <span><strong>Lampirkan bukti</strong><small>Foto dokumen atau lahan</small></span>
           <input type="file" multiple accept="image/*,.pdf" onChange={(event) => { const names = [...(event.target.files ?? [])].map((file) => file.name); setEvidence((previous) => [...new Set([...previous, ...names])].slice(0, 10)); event.target.value = ""; }} />
         </label>
         {evidence.length > 0 && <ul className="chip-list" aria-label="Bukti terlampir">{evidence.map((name) => <li key={name} className="chip"><Paperclip size={13} aria-hidden="true" />{name}<button type="button" className="chip-remove" aria-label={`Hapus ${name}`} onClick={() => setEvidence(evidence.filter((item) => item !== name))}>×</button></li>)}</ul>}

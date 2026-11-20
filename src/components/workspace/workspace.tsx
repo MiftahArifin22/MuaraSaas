@@ -1,6 +1,6 @@
 "use client";
 
-import { Factory, Fingerprint, FlaskConical, LayoutDashboard, MapPinned, Menu, RotateCcw, UsersRound, X } from "lucide-react";
+import { Factory, Fingerprint, LayoutDashboard, MapPinned, Menu, RotateCcw, UsersRound, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Fragment, useEffect, useState, type ReactNode } from "react";
@@ -77,11 +77,7 @@ export function Workspace({ access, children }: { access: WorkspaceAccess; child
           ))}
         </nav>
         <div className="sidebar-footer">
-          <div className="sidebar-mode">
-            <FlaskConical size={16} aria-hidden="true" />
-            <div><strong>{access.mode === "supabase" ? "Mode demo · akun terautentikasi" : "Mode demo lokal"}</strong><small>Data contoh di browser ini</small></div>
-          </div>
-          <button type="button" className="sidebar-reset" onClick={() => setShowReset(true)}><RotateCcw size={15} aria-hidden="true" />Reset data demo</button>
+          <button type="button" className="sidebar-reset" onClick={() => setShowReset(true)}><RotateCcw size={15} aria-hidden="true" />Reset data</button>
         </div>
       </aside>
       {menuOpen && <button type="button" className="sidebar-backdrop no-print" aria-label="Tutup navigasi" onClick={() => setMenuOpen(false)} />}
@@ -92,20 +88,19 @@ export function Workspace({ access, children }: { access: WorkspaceAccess; child
           <span className="topbar-title">{activePage.label}</span>
           <GlobalSearch />
           <div className="topbar-account">
-            <span className="demo-badge" title="Seluruh data adalah data contoh"><FlaskConical size={14} aria-hidden="true" />Data demo</span>
             {access.mode === "supabase" ? <><span className="account-email">{access.email}</span><LogoutButton /></> : <span className="account-email">Tanpa login</span>}
           </div>
         </header>
         <main className="workspace-content" id="konten">
           {!storageAvailable && <p className="inline-notice notice-error no-print" role="status">Browser tidak bisa menyimpan data. Perubahan hilang saat halaman ditutup.</p>}
-          {resetMessage && <SuccessNotice onDismiss={() => setResetMessage(false)}>Data demo dikembalikan ke kondisi awal.</SuccessNotice>}
-          {ready ? <Fragment key={resetCount}>{children}</Fragment> : <PageLoading label="Memuat data demo…" />}
+          {resetMessage && <SuccessNotice onDismiss={() => setResetMessage(false)}>Data dikembalikan ke kondisi awal.</SuccessNotice>}
+          {ready ? <Fragment key={resetCount}>{children}</Fragment> : <PageLoading label="Memuat data…" />}
         </main>
       </div>
 
       {showReset && (
-        <ConfirmDialog title="Reset data demo?" confirmLabel="Ya, reset data demo" danger onConfirm={confirmReset} onDismiss={() => setShowReset(false)}>
-          <p>Semua perubahan demo di browser ini dihapus dan data contoh dimuat ulang. Data Supabase tidak terpengaruh.</p>
+        <ConfirmDialog title="Reset data?" confirmLabel="Ya, reset data" danger onConfirm={confirmReset} onDismiss={() => setShowReset(false)}>
+          <p>Semua perubahan di browser ini dihapus dan data awal dimuat ulang. Data Supabase tidak terpengaruh.</p>
         </ConfirmDialog>
       )}
     </div>

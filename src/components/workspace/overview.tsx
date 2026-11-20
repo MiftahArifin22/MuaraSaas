@@ -42,7 +42,7 @@ export function Overview() {
     <>
       <PageHeading title="Ringkasan" actions={<>
         <button type="button" className="button button-secondary" onClick={() => window.print()}><Printer size={17} /> Cetak</button>
-        <button type="button" className="button button-secondary" onClick={() => downloadJson("muara-ringkasan-demo", { simulasi: true, pabrik: data.mill, pemasok: suppliers, lot: lots.map(({ validation, ...lot }) => ({ ...lot, status: validation.risk, temuan: validation.issues })), tugas: data.tasks })}><Download size={17} /> Unduh JSON</button>
+        <button type="button" className="button button-secondary" onClick={() => downloadJson("muara-ringkasan", { simulasi: true, pabrik: data.mill, pemasok: suppliers, lot: lots.map(({ validation, ...lot }) => ({ ...lot, status: validation.risk, temuan: validation.issues })), tugas: data.tasks })}><Download size={17} /> Unduh JSON</button>
       </>}>
         Pekerjaan yang perlu ditindaklanjuti di <strong>{data.mill.name}</strong>.
       </PageHeading>

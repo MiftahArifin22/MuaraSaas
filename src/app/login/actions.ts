@@ -10,7 +10,7 @@ export type AuthState = { error: string };
 export async function signIn(_previous: AuthState, form: FormData): Promise<AuthState> {
   const email = String(form.get("email") ?? "").trim();
   const password = String(form.get("password") ?? "");
-  if (!isSupabaseConfigured()) return { error: "Supabase belum dikonfigurasi di server ini. Gunakan tombol Buka workspace demo." };
+  if (!isSupabaseConfigured()) return { error: "Supabase belum dikonfigurasi di server ini. Gunakan tombol Buka workspace." };
   if (!isWorkspaceAccount(email)) return { error: "Gunakan akun BNI Ventures yang tercantum pada formulir." };
   if (!password || password.length > 1024) return { error: "Masukkan password akun Anda." };
 

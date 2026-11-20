@@ -163,7 +163,7 @@ export function saveLot(data: DemoData, input: LotInput, isNew: boolean, now: st
   };
   const errors = lotInputErrors(lot, data, isNew);
   if (errors.length) throw new Error(errors.join(" "));
-  if (!isNew && !data.lots.some((item) => item.id === lot.id)) throw new Error("Lot tidak ditemukan. Data demo mungkin telah direset.");
+  if (!isNew && !data.lots.some((item) => item.id === lot.id)) throw new Error("Lot tidak ditemukan. Data mungkin telah direset.");
   const lots = isNew ? [...data.lots, lot] : data.lots.map((item) => item.id === lot.id ? lot : item);
   const text = isNew ? `Lot ${lot.id} dicatat, ${formatNumber(lot.weight)} ton dari ${lot.allocations.length} sumber` : `Alokasi ${lot.id} diperbarui`;
   return withActivity({ ...data, lots }, text, `/dashboard/traceability?lot=${lot.id}`, now);

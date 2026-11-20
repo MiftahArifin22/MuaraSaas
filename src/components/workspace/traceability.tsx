@@ -154,7 +154,7 @@ function SupplyChain({ lot, validation, data }: { lot: Lot; validation: LotValid
 function exportLot(lot: Lot, validation: LotValidation, data: DemoData) {
   const supplier = data.suppliers.find((item) => item.id === lot.supplierId);
   return {
-    keterangan: "Data demo MUARA. Hasil pemeriksaan awal berdasarkan aturan aplikasi dan layer contoh, bukan analisis resmi.",
+    keterangan: "Hasil pemeriksaan awal MUARA berdasarkan aturan aplikasi, bukan analisis resmi.",
     dibuat_pada: timestamp(),
     lot: { nomor: lot.id, tanggal_terima: lot.date, berat_ton: lot.weight, jenis_kayu: lot.species },
     referensi_bukti: { penerimaan_pabrik: lot.receivingRef || null, dokumen_angkutan: lot.transportRef || null, pabrik: data.mill.name, referensi_pabrik: data.mill.reference },
@@ -210,15 +210,15 @@ export function Traceability() {
     <>
       <PageHeading title="Penelusuran pasokan" actions={<>
         <button type="button" className="button button-secondary" onClick={() => window.print()}><Printer size={17} /> Cetak lot</button>
-        <button type="button" className="button button-secondary" onClick={() => downloadJson(`muara-${lot.id}-demo`, exportLot(lot, validation, data))}><Download size={17} /> Unduh JSON</button>
+        <button type="button" className="button button-secondary" onClick={() => downloadJson(`muara-${lot.id}`, exportLot(lot, validation, data))}><Download size={17} /> Unduh JSON</button>
         <button type="button" className="button button-primary" onClick={() => { setEditor({ mode: "new", today: jakartaDate(timestamp()) }); setFeedback(""); }}><Plus size={17} /> Catat penerimaan</button>
       </>}>
         Lihat asal kayu di setiap lot.
       </PageHeading>
-      <p className="inline-notice notice-info no-print"><FlaskConical size={18} aria-hidden="true" /><span><strong>Data contoh.</strong> Cek kapasitas hanya tanda untuk ditinjau, bukan bukti tunggal asal kayu.</span></p>
+      <p className="inline-notice notice-info no-print"><FlaskConical size={18} aria-hidden="true" /><span><strong>Catatan.</strong> Cek kapasitas hanya tanda untuk ditinjau, bukan bukti tunggal asal kayu.</span></p>
       {feedback && <div className="no-print"><SuccessNotice onDismiss={() => setFeedback("")}>{feedback}</SuccessNotice></div>}
 
-      <div className="print-header" aria-hidden="true"><strong>MUARA · Laporan penelusuran pasokan (data demo)</strong><span>{data.mill.name} · {data.mill.reference}</span></div>
+      <div className="print-header" aria-hidden="true"><strong>MUARA · Laporan penelusuran pasokan</strong><span>{data.mill.name} · {data.mill.reference}</span></div>
 
       <div className="master-detail-grid">
         <section className="panel list-panel no-print" aria-labelledby="lot-list-title">
@@ -287,7 +287,7 @@ export function Traceability() {
               {validation.issues.some(({ category }) => category === "bukti" || category === "risiko") && <Link className="button button-secondary button-small" href={`/dashboard/due-diligence?pemasok=${lot.supplierId}`}>Lengkapi data pemasok</Link>}
               {validation.issues.some(({ category }) => category === "berat" || category === "kapasitas" || category === "pemasok") && <button type="button" className="button button-secondary button-small" onClick={() => setEditor({ mode: "edit" })}>Perbaiki alokasi</button>}
             </div>
-            <p className="print-only fine-print">Dicetak dari demo MUARA ({data.activity[0] ? formatDateTime(data.activity[0].at) : "—"}). Keputusan penerimaan tetap di tangan perusahaan.</p>
+            <p className="print-only fine-print">Dicetak dari MUARA ({data.activity[0] ? formatDateTime(data.activity[0].at) : "—"}). Keputusan penerimaan tetap di tangan perusahaan.</p>
           </section>
         </div>
       </div>

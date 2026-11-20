@@ -108,7 +108,7 @@ function PlotDrawer({ plot, data, onDismiss, onAssign }: { plot: Plot; data: Dem
         : step.task ? <Link className="button button-primary" href={`/dashboard/cooperatives?tugas=${step.task.id}`}>Buka tugas {step.task.id}</Link>
           : <button type="button" className="button button-secondary" onClick={onDismiss}>Tutup</button>
     }>
-      <div className="drawer-status"><RiskBadge risk={screening.risk} /><span>Data contoh</span></div>
+      <div className="drawer-status"><RiskBadge risk={screening.risk} /></div>
 
       <section className="drawer-section" aria-label="Tindakan berikutnya">
         <h3>Tindakan berikutnya</h3>

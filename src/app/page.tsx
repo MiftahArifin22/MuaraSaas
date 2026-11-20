@@ -31,21 +31,21 @@ export default function Home() {
       </header>
 
       <main>
-        <div className="landing-width hero-wrap">
-          <section className="landing-hero" aria-labelledby="hero-title">
-            <Image className="hero-bg" src="/kanopi-akasia.webp" alt="" fill preload sizes="(max-width: 760px) 95vw, 1400px" />
+        <section className="landing-hero" aria-labelledby="hero-title">
+          <Image className="hero-bg" src="/kanopi-akasia.webp" alt="" fill preload sizes="100vw" />
+          <div className="landing-width hero-inner">
             <div className="hero-copy">
               <h1 id="hero-title">Dari lahan ke pabrik, <em>asalnya jelas.</em></h1>
               <p>MUARA membantu pabrik pulp, kertas, dan serpih kayu memastikan asal setiap kiriman kayu.</p>
               <div className="actions hero-actions">
-                <Link className="button button-lime" href="/dashboard">Coba workspace demo <ArrowRight size={17} aria-hidden="true" /></Link>
+                <Link className="button button-lime" href="/dashboard">Buka workspace <ArrowRight size={17} aria-hidden="true" /></Link>
                 <a className="button button-secondary" href="#solusi">Lihat cara kerja</a>
               </div>
-              <div className="hero-foot"><span>#AsalJelasBersamaMUARA</span><span>Demo dengan data fiktif</span></div>
+              <div className="hero-foot"><span>#AsalJelasBersamaMUARA</span></div>
             </div>
             <div className="hero-caption"><span className="icon-box"><Layers3 size={20} aria-hidden="true" /></span><div><strong>Lahan, pemasok, dan pasokan</strong><small>Terhubung di satu tempat</small></div></div>
-          </section>
-        </div>
+          </div>
+        </section>
 
         <section id="solusi" className="landing-modules" aria-labelledby="solusi-title">
           <div className="landing-width">
@@ -86,8 +86,8 @@ export default function Home() {
         </section>
 
         <section className="landing-cta landing-width" aria-labelledby="cta-title">
-          <h2 id="cta-title">Coba dengan data contoh</h2>
-          <Link className="button button-primary" href="/dashboard">Buka workspace demo <ArrowRight size={17} aria-hidden="true" /></Link>
+          <h2 id="cta-title">Mulai telusuri asal kayu</h2>
+          <Link className="button button-primary" href="/dashboard">Buka workspace <ArrowRight size={17} aria-hidden="true" /></Link>
         </section>
       </main>
 

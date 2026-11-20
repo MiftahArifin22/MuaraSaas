@@ -14,7 +14,7 @@ $$;
 
 INSERT INTO public.organizations (id, name, org_type, region, svlk_reference)
 VALUES
-  ('10000000-0000-4000-8000-000000000001', 'Pabrik Serat Teluk Jelutong', 'pulp_mill', 'Muaro Jambi, Jambi', 'SVLK-DEMO-001'),
+  ('10000000-0000-4000-8000-000000000001', 'Pabrik Serat Teluk Jelutong', 'pulp_mill', 'Muaro Jambi, Jambi', 'SVLK-001'),
   ('20000000-0000-4000-8000-000000000001', 'Koperasi Rimba Muara', 'cooperative', 'Kumpeh Ulu, Muaro Jambi', NULL),
   ('20000000-0000-4000-8000-000000000002', 'Koperasi Tunas Batanghari', 'cooperative', 'Kumpeh, Muaro Jambi', NULL)
 ON CONFLICT (id) DO NOTHING;

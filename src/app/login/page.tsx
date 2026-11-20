@@ -1,4 +1,3 @@
-import { FlaskConical } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Brand } from "@/components/brand";
@@ -16,12 +15,11 @@ export default function LoginPage() {
         <div>
           <p className="eyebrow">Workspace BNI Ventures</p>
           <h1 id="login-title">Masuk ke MUARA</h1>
-          <p>Masuk dengan akun BNI Ventures. Semua data di dalamnya adalah data contoh.</p>
+          <p>Masuk dengan akun BNI Ventures.</p>
         </div>
         {configured ? <LoginForm /> : (
           <div className="form-stack login-form">
-            <p className="inline-notice notice-info"><FlaskConical size={18} aria-hidden="true" /><span><strong>Mode demo.</strong> Login tidak diperlukan. Perubahan tersimpan di browser ini.</span></p>
-            <Link className="button button-primary" href="/dashboard">Buka workspace demo</Link>
+            <Link className="button button-primary" href="/dashboard">Buka workspace</Link>
           </div>
         )}
         <Link href="/" className="text-link">Kembali ke beranda</Link>

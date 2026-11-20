@@ -9,7 +9,7 @@ const now = "2026-11-19T03:00:00.000Z";
 const lot = (data: DemoData, id: string) => data.lots.find((item) => item.id === id) as Lot;
 const fieldResult = (data: DemoData, plotId: string) => {
   const plot = data.plots.find((item) => item.id === plotId)!;
-  return { owner: plot.owner, documentType: plot.documentType, documentRef: "SKT-DEMO-003", geometry: plot.geometry, note: "Dokumen asli diperiksa." };
+  return { owner: plot.owner, documentType: plot.documentType, documentRef: "SKT-003", geometry: plot.geometry, note: "Dokumen asli diperiksa." };
 };
 
 describe("validasi lot", () => {
@@ -108,7 +108,7 @@ describe("transisi tugas koperasi", () => {
   });
 
   it("hasil diterima tidak menghapus temuan risiko layer", () => {
-    const submitted = saveFieldResult(seed, "TGS-003", { ...fieldResult(seed, "LH-005"), documentRef: "SKT-DEMO-005" }, true, now);
+    const submitted = saveFieldResult(seed, "TGS-003", { ...fieldResult(seed, "LH-005"), documentRef: "SKT-005" }, true, now);
     const accepted = reviewTask(submitted, "TGS-003", true, "", now);
     assert.equal(screenPlot(accepted.plots.find((plot) => plot.id === "LH-005")!).risk, "red");
     assert.equal(screenSupplier(accepted.plots.filter((plot) => plot.supplierId === "PS-003")), "red");
