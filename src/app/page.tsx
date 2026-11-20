@@ -31,22 +31,21 @@ export default function Home() {
       </header>
 
       <main>
-        <section className="landing-hero landing-width" aria-labelledby="hero-title">
-          <div className="hero-copy">
-            <h1 id="hero-title">Dari lahan ke pabrik, <em>asalnya jelas.</em></h1>
-            <p>MUARA membantu pabrik pulp, kertas, dan serpih kayu memastikan asal setiap kiriman kayu.</p>
-            <div className="actions hero-actions">
-              <Link className="button button-lime" href="/dashboard">Coba workspace demo <ArrowRight size={17} aria-hidden="true" /></Link>
-              <a className="button button-secondary" href="#solusi">Lihat cara kerja</a>
+        <div className="landing-width hero-wrap">
+          <section className="landing-hero" aria-labelledby="hero-title">
+            <Image className="hero-bg" src="/kanopi-akasia.webp" alt="" fill preload sizes="(max-width: 760px) 95vw, 1400px" />
+            <div className="hero-copy">
+              <h1 id="hero-title">Dari lahan ke pabrik, <em>asalnya jelas.</em></h1>
+              <p>MUARA membantu pabrik pulp, kertas, dan serpih kayu memastikan asal setiap kiriman kayu.</p>
+              <div className="actions hero-actions">
+                <Link className="button button-lime" href="/dashboard">Coba workspace demo <ArrowRight size={17} aria-hidden="true" /></Link>
+                <a className="button button-secondary" href="#solusi">Lihat cara kerja</a>
+              </div>
+              <div className="hero-foot"><span>#AsalJelasBersamaMUARA</span><span>Demo dengan data fiktif</span></div>
             </div>
-            <div className="hero-foot"><span>#AsalJelasBersamaMUARA</span><span>Demo dengan data fiktif</span></div>
-          </div>
-          <div className="hero-visual">
-            <Image src="/kanopi-akasia.webp" alt="Ilustrasi udara kanopi hutan akasia dengan jalur tanah yang berkelok" fill preload sizes="(max-width: 760px) 95vw, 600px" />
-            <div className="hero-visual-line" aria-hidden="true" />
             <div className="hero-caption"><span className="icon-box"><Layers3 size={20} aria-hidden="true" /></span><div><strong>Lahan, pemasok, dan pasokan</strong><small>Terhubung di satu tempat</small></div></div>
-          </div>
-        </section>
+          </section>
+        </div>
 
         <section id="solusi" className="landing-modules" aria-labelledby="solusi-title">
           <div className="landing-width">
