@@ -44,10 +44,19 @@ function ResizeWatcher() {
 
 export default function PlotMap({ plots, focus, highlightIds, viewRevision, selectedPlotId, visibleLayers, onPlotSelect }: PlotMapProps) {
   const [tileError, setTileError] = useState(false);
+  // Next menyembunyikan halaman (bukan membongkarnya) saat pindah menu, lalu menampilkannya lagi.
+  // Peta Leaflet dibuang saat halaman tersembunyi dan dibuat baru saat tampil, supaya elemen peta
+  // lama tidak dipakai ulang ("Map container is being reused by another instance").
+  const [active, setActive] = useState(false);
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- peta harus dibuat ulang tiap halaman tampil lagi
+    setActive(true);
+    return () => setActive(false);
+  }, []);
   const tileEvents: LeafletEventHandlerFnMap = { tileerror: () => setTileError(true) };
   return (
     <div className="plot-map-frame">
-      <MapContainer center={[-1.706, 103.86]} zoom={12} scrollWheelZoom={false} className="plot-map" aria-label="Peta lahan sumber dan layer pemeriksaan simulasi">
+      {active && <MapContainer center={[-1.706, 103.86]} zoom={12} scrollWheelZoom={false} className="plot-map" aria-label="Peta lahan sumber dan layer pemeriksaan simulasi">
         {!tileError && <TileLayer url="https://tile.openstreetmap.org/{z}/{x}/{y}.png" attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>' eventHandlers={tileEvents} />}
         {tileError && <Polyline positions={demoRiver} pathOptions={{ color: "#9fbbc0", weight: 7, opacity: 0.8 }} interactive={false} />}
         <FitPlots plots={focus.length ? focus : plots} viewRevision={viewRevision} />
@@ -72,7 +81,7 @@ export default function PlotMap({ plots, focus, highlightIds, viewRevision, sele
             </GeoJSON>
           );
         })}
-      </MapContainer>
+      </MapContainer>}
       {tileError && <span className="map-offline">Peta dasar tidak termuat · batas skematis</span>}
       <span className="map-sim-label">Layer contoh · simulasi</span>
     </div>
